@@ -61,7 +61,7 @@ export default {
     //const store = useNewsStore()
     //const {posts} = store
     //console.log(store.data)
-    console.log(this.$store)
+    console.log(this.$pinia)
   },
   methods: {
     signinfun(rd) {
