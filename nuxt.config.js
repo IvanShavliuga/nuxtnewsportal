@@ -36,7 +36,13 @@ export default defineNuxtConfig({
         ],
       
       },
-      devServer: {
+     /*  devServer: {
         port: 8080,
-      }
+      }, */
+      modules: [
+        // ...
+        '@pinia/nuxt',
+        '@nuxt/devtools',
+      ],
+
 })

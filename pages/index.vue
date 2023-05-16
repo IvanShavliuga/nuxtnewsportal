@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div v-if="userlogin">
+    <!-- <div v-if="userlogin">
       <app-header></app-header>
       <div class="content">
         <router-view></router-view>
@@ -21,15 +21,21 @@
       >
         {{ !registration ? "Sign up" : "sign in" }}
       </p>
-    </div>
+    </div> -->
+    <pre style="color: blue">{{postsData}}</pre>
+    <CompositionComponent/>
   </div>
 </template>
 
 <script>
+import { useNewsStore } from '../stores';
+import { mapState } from 'pinia'
 import Header from "@/components/Header.vue";
 import Signin from "@/components/Signin.vue";
 import Footer from "@/components/Footer.vue";
 import Signup from "@/components/Signup.vue";
+
+
 
 export default {
   data() {
@@ -46,7 +52,12 @@ export default {
     appSignup: Signup,
     appFooter: Footer,
   },
-  created() {
+   computed: {
+     ...mapState(useNewsStore,{
+      postsData: 'posts',
+    }),
+  }, 
+  mounted() {
     //this.users = this.$store.getters.users;
     //this.userlogin = this.$store.getters.auth;
   },
