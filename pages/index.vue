@@ -22,7 +22,8 @@
         {{ !registration ? "Sign up" : "sign in" }}
       </p>
     </div> -->
-    <pre style="color: red">{{news}}</pre>
+    <pre style="color: blue">{{postsData}}</pre>
+    <CompositionComponent/>
   </div>
 </template>
 
@@ -51,17 +52,14 @@ export default {
     appSignup: Signup,
     appFooter: Footer,
   },
-  computed: {
-     ...mapState(useNewsStore, ['posts']),
-  
-  },
+   computed: {
+     ...mapState(useNewsStore,{
+      postsData: 'posts',
+    }),
+  }, 
   mounted() {
     //this.users = this.$store.getters.users;
     //this.userlogin = this.$store.getters.auth;
-    //const store = useNewsStore()
-    //const {posts} = store
-    //console.log(store.data)
-    console.log(this.$pinia)
   },
   methods: {
     signinfun(rd) {

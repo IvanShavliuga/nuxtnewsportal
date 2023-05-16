@@ -42,7 +42,7 @@ export const useNewsStore = defineStore('news', {
     ],
   }),
   getters: {
-    posts(state) { return state.posts},
+    getPosts(state) { return state.posts},
   },
   
 })
